@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 use yii\web\Controller;
-use app\models\Test;
+use app\models\Task;
 
 class TaskController extends Controller
 {
     //public $layout = false; //вариант 1
 
-    public function actionTask()
+    public function actionTasks()
     {
         // $model = new Test();
         // $model-> title = 'Yii2';
@@ -21,7 +21,7 @@ class TaskController extends Controller
         //var_dump($model->getErrors());
         //exit;
 
-        return $this->render('task',
+        return $this->render('tasks',
        
          [
             // 'title' => 'Yii2',
@@ -30,5 +30,27 @@ class TaskController extends Controller
          ]
         )        ;
         //return $this->renderPartial('test'); //вариант 2 (без public $layout)
+    }
+
+    public function actionTask()
+    {
+        
+        return $this->render('task',
+       
+         [
+         ]
+        );
+        
+    }
+
+    public function actionEdit()
+    {
+        
+        return $this->render('edit',
+       
+         [
+         ]
+        );
+        
     }
 }
