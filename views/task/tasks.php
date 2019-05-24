@@ -11,6 +11,8 @@
                     <th>Действия</th>
                     <th>Исполнитель</th>
                     <th>Крайний срок</th>
+                    <th>Статус</th>
+                    <th>Изменить статус</th>
                 </tr>
                 </thead>
 
@@ -30,6 +32,12 @@
                     </td>
                     <td>Студент GeekBrains</td>
                     <td>25.05.2019</td>
+                    <td>В работе</td>
+                    <td>
+                    <a onclick="return confirm('are you sure?');" href="http://yii2base/index.php?r=task/tasks" class="btn btn-success">
+                            Done!
+                        </a>
+                    </td>
                 </tr>
                 
 

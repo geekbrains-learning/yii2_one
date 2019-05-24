@@ -13,6 +13,18 @@
                 </div>
 
                 <div class="form-group">
+                    <textarea name="implementer" class="form-control">Студент GeekBrains</textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="deadline" class="form-control">25.05.2019</textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="status" class="form-control">в работе</textarea>
+                </div>
+
+                <div class="form-group">
                     <button class="btn btn-warning" type="submit">Submit</button>
                 </div>
                 <a href="http://yii2base/index.php?r=task/tasks">Назад</a>
