@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\tables;
 
 use Yii;
 
@@ -11,10 +11,8 @@ use Yii;
  * @property string $login
  * @property string $password
  * @property int $isUser 0-user, 1-admin
- * @property string $auth_key
- * @property string $access_token
  */
-class User extends \yii\db\ActiveRecord
+class Users extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -34,9 +32,6 @@ class User extends \yii\db\ActiveRecord
             [['isUser'], 'integer'],
             [['login'], 'string', 'max' => 25],
             [['password'], 'string', 'max' => 40],
-            [['auth_key', 'access_token'], 'string', 'max' => 32],
-            [['auth_key'], 'unique'],
-            [['access_token'], 'unique'],
         ];
     }
 
@@ -50,8 +45,16 @@ class User extends \yii\db\ActiveRecord
             'login' => 'Login',
             'password' => 'Password',
             'isUser' => 'Is User',
-            'auth_key' => 'Auth Key',
-            'access_token' => 'Access Token',
         ];
+    }
+
+    public function createId() 
+    {
+        return $this->hasMany(Tasks::className(), ['creator_id' => 'id']);
+    }
+
+    public function responId() 
+    {
+        return $this->hasMany(Tasks::className(), ['responsible_id' => 'id']);
     }
 }
