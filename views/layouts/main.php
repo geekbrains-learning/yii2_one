@@ -23,6 +23,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     
     <?php $this->head() ?>
+    <link rel="stylesheet" href="/css/tasks.css">
 </head>
 <body>
 <?php $this->beginBody() ?>

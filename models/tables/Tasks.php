@@ -14,6 +14,10 @@ use Yii;
  * @property int $responsible_id
  * @property string $deadline
  * @property int $status_id
+ * 
+ * @property int $status
+ * @property string $creator
+ * @property int $responsible
  */
 class Tasks extends \yii\db\ActiveRecord
 {
@@ -63,6 +67,16 @@ class Tasks extends \yii\db\ActiveRecord
     }
 
     public function responsibleId() 
+    {
+        return $this->hasOne(Users::className(), ['id' => 'responsible_id']);
+    }
+
+    public function getCreator() 
+    {
+        return $this->hasOne(Users::className(), ['id' => 'creator_id']);
+    }
+
+    public function getResponsible() 
     {
         return $this->hasOne(Users::className(), ['id' => 'responsible_id']);
     }

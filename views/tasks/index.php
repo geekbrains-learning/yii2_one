@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\ListView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\tables\SearchT */
@@ -19,8 +20,15 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
+    <?=ListView::widget([
+        'itemView' => 'view',
+        'dataProvider' => $dataProvider,
+        'viewParams' => [
+            'hide' => 'true'
+        ]
+    ])
+    ?>
+    <!-- <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -36,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]); ?> -->
 
 
 </div>

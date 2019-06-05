@@ -2,13 +2,17 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\widgets\SingleTask;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\tables\Tasks */
 
 $this->title = $model->name;
+if(!$hide) {
 $this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+}
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="tasks-view">
@@ -17,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('view', ['view', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
