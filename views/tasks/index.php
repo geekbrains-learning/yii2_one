@@ -4,6 +4,8 @@ use app\models\tables\Tasks;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\tables\SearchT */
@@ -56,11 +58,6 @@ $dataProvider = new ActiveDataProvider([
         ],
     ]); ?> -->
 
- <?= ListView::widget([
-    'dataProvider' => $dataProvider,
-    //'filterModel' => $searchModel,
-    'itemView' => '_list',
-    ]);
-?>
+
 
 </div>
