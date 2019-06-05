@@ -4,10 +4,6 @@ use app\models\tables\Tasks;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ListView;
-<<<<<<< HEAD
-=======
-use yii\data\ActiveDataProvider;
->>>>>>> ae6406608eb1807af0547ae5ef3c9ad5ec31789a
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\tables\SearchT */
@@ -34,7 +30,6 @@ $dataProvider = new ActiveDataProvider([
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-<<<<<<< HEAD
     <?=ListView::widget([
         'itemView' => 'view',
         'dataProvider' => $dataProvider,
@@ -60,9 +55,6 @@ $dataProvider = new ActiveDataProvider([
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?> -->
-=======
-
->>>>>>> ae6406608eb1807af0547ae5ef3c9ad5ec31789a
 
  <?= ListView::widget([
     'dataProvider' => $dataProvider,
